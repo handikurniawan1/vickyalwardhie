@@ -1,0 +1,164 @@
+.header-text,
+.sub-title {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+}
+/* navbar */
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 40px 150px;
+}
+
+.logo {
+  font-size: 28px;
+  width: auto;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #ffffff; /* Warna pertama, contoh warna merah */
+}
+
+.logo::before {
+  content: "Lotus ";
+  color: #ffd300; /* Warna kedua, contoh warna hijau */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 0.9px;
+  background: #ffd300;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.8s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* besar logo berger */
+.navbar-icon {
+  font-size: 25px;
+}
+
+/* General styles for your Navbar component */
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-big ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-big li {
+  margin-right: 20px;
+}
+
+.navbar-big a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Media query to show the burger icon on small screens */
+@media only screen and (max-width: 600px) {
+  .burger {
+    display: block;
+  }
+}
+
+/* Styles for the sidebar menu */
+#sidemenu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 1; /* Ensure the sidebar appears above other elements */
+}
+
+#sidemenu.active {
+  right: 0;
+}
+
+#sidemenu li {
+  list-style: none;
+  margin: 15px 0;
+  text-align: center;
+}
+
+#sidemenu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#sidemenu .close-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 2;
+}

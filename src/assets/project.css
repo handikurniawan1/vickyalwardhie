@@ -1,0 +1,97 @@
+/* Default styles for larger screens */
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 20px;
+}
+
+.grid-item:hover {
+  opacity: 0.5;
+}
+
+.Project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* This ensures the centering works vertically as well */
+  text-align: center; /* If you want to center the text within the div */
+  font-size: 30px;
+}
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+.Wrapper{
+  padding : 50px 100px 100px 100px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
+    grid-gap: 0px;
+    padding: 0px 10px 0px 10px;
+  }
+  .Project {
+    padding: 100px 0px 50px 0px; /* Adjust padding for smaller screens */
+  }
+  .responsive-image {
+    max-width: 75%;
+    height: auto;
+  }
+  .Project-title {
+    font-size: 15px;
+  }
+  #Content {
+    padding: 0px 0px 0px 12px;
+  }
+  .Wrapper {
+    padding: 0px 0px 0px 0px;
+  }
+  .grid-item:hover {
+    pointer-events: none;
+    opacity: 1.0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width for smaller screens */
+  }
+  .Project {
+    padding: 100px 5px 50px 5px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width for smaller screens */
+  }
+  .Project {
+    padding: 100px 5px 50px 5px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width for smaller screens */
+  }
+  .Project {
+    padding: 100px 5px 50px 5px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width for smaller screens */
+  }
+  .Project {
+    padding: 100px 5px 50px 5px; /* Adjust padding for smaller screens */
+  }
+ 
+}

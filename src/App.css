@@ -1,0 +1,787 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.header-text,
+.sub-title {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* navbar */
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 40px 150px;
+}
+
+.logo {
+  font-size: 28px;
+  width: auto;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #ffffff; /* Warna pertama, contoh warna merah */
+}
+
+.logo::before {
+  content: "Vicky ";
+  color: #ffd300; /* Warna kedua, contoh warna hijau */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.navbar-big {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 1;
+  padding: 10px 0px;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 0.9px;
+  background: #ffd300;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.8s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+/* Styling for the sidebar menu */
+#sidemenu {
+  position: fixed;
+  top: 0;
+  right: -5000px; /* Initially hidden off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: #333; /* Background color for the sidebar */
+  padding: 80px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center;
+  transition: right 0.3s ease-in-out; /* Transition for smooth sliding effect */
+  z-index: 1; /* Ensure the sidebar appears above other elements */
+}
+
+#sidemenu.active {
+  right: 0; /* Slide in when the 'active' class is applied */
+}
+
+#sidemenu li {
+  list-style: none;
+  margin: 15px 0;
+  text-align: center;
+}
+
+#sidemenu a {
+  color: #fff; /* Link text color */
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Close button */
+#sidemenu .close-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 2; /* Ensure the close button appears above the sidebar */
+}
+
+/* Styling for the burger icon */
+.burger {
+  cursor: pointer;
+  display: none;
+  z-index: 2; /* Ensure the burger icon appears above the sidebar */
+}
+
+/* Media query to show/hide the burger icon based on screen size */
+@media only screen and (max-width: 800px) {
+  .burger {
+    display: block; /* Show the burger icon on small screens */
+  }
+}
+
+/* besar logo berger */
+.navbar-icon {
+  font-size: 25px;
+}
+
+/* Hero */
+.hero {
+  background-image: url(/src/assets/Home-01.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .wrapper {
+  height: 80%;
+  justify-content: left;
+  align-items: center;
+  padding: 330px 150px;
+  opacity: 1.0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero .wrapper div:nth-child(1) {
+  color: white;
+  font-size: 30px;
+}
+
+.hero .wrapper div h1 {
+  color: white;
+  font-size: 60px;
+}
+.hero .wrapper div h1 span {
+  color: #ffd300;
+  font-size: 60px;
+}
+/* about */
+
+#about {
+  padding: 150px 150px;
+  color: #ababab;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+.sub-title {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: "";
+  width: 0;
+  height: 0.9px;
+  background: #ffd300;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+
+.tab-contents ul li {
+  list-style: none;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.tab-contents ul li span {
+  color: #ffd300;
+  font-size: 14px;
+}
+
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+/* services */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(3, 0.2fr); /* Membuat 5 kolom */
+  gap: 10px; /* Jarak antara elemen-elemen */
+  list-style: none; /* Menghapus bullet list */
+  padding: 0;
+  font-weight: bold;
+}
+
+.skills-list li {
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px; /* Sudut elemen */
+}
+
+#services {
+  padding: 100px 150px;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+#services-detail {
+  background: #262626;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 8px;
+  border: 2px solid #ffee32;
+  transition: background 0.8s, transform 0.2s;
+}
+
+#services-detail:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  color: #000000;
+}
+#services-detail div i {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.services-list div h2 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+.services-list div a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffd300;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* portfolio */
+#portfolio {
+  padding: 100px 150px;
+}
+.Project-title {
+  padding: 30px 0px 30px 0px;
+  text-align: center;
+}
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.8s;
+}
+
+#wrapper-decs {
+  padding: 0 10px;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), #585757);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0px;
+  text-align: center;
+  font-size: 10px;
+  transition: height 0.8s;
+}
+
+.layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text within elements */
+}
+#btn-project {
+  color: #ffd300;
+  width: 30px; /* Increase the width for a larger button */
+  height: 30px; /* Height should match the width for a circular button */
+  border-radius: 50%; /* Makes the button circular */
+  background-color: rgb(255, 255, 255); /* Change the background color */
+  font-size: 18px; /* Adjust the font size for the text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer; /* Add a pointer cursor on hover */
+  transition: background-color 0.3s; /* Add a smooth color transition on hover */
+  margin: 10px 0px;
+}
+
+#btn-project:hover {
+  background-color: #ffd300; /* Change the background color on hover */
+  color: white;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
+
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ffd300;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #ffd300;
+}
+
+/* contact */
+.contact-left {
+  flex-basis: 35%;
+}
+#contact {
+  padding: 100px 150px;
+}
+.contact-right {
+  flex-basis: 35%;
+}
+
+.contact-left p {
+  margin-top: 30px;
+}
+
+.contact-left p i {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-right: 15px;
+  color: #fff;
+  display: inline-block;
+  transition: transform 0.7s;
+}
+
+.social-icons a:hover {
+  color: #ffd300;
+  transform: translateY(-2px);
+}
+
+.btn.btn2 {
+  display: inline-block;
+  background: #000000;
+}
+
+.btn.btn2:hover {
+  /* Gaya saat tombol dihover */
+  /* Misalnya, ubah warna teks saat tombol dihover */
+  color: #ffffff;
+}
+
+.contact-right form {
+  width: 100%;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 10px;
+  background: #171616;
+  display: flex;
+  justify-content: center; /* Mengatur konten secara horizontal di tengah */
+  align-items: center; /* Mengatur konten secara vertikal di tengah */
+}
+
+nav .fas {
+  display: none;
+  cursor: pointer;
+}
+
+/* animasi about */
+#about {
+  opacity: 0;
+  transform: translateY(30px); /* Pindahkan elemen 20px ke bawah */
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* CSS untuk melakukan fade-in dan menggeser elemen saat elemen about masuk viewport */
+#about.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Kembalikan elemen ke posisi semula */
+}
+
+/* animasi portfolio */
+#portfolio {
+  opacity: 0;
+  transform: translateY(30px); /* Pindahkan elemen 30px ke bawah */
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* CSS untuk melakukan fade-in dan menggeser elemen saat elemen portfolio masuk viewport */
+#portfolio.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Kembalikan elemen ke posisi semula */
+}
+
+/* animasi services */
+#services {
+  opacity: 0;
+  transform: translateX(20px); /* Pindahkan elemen 30px dari kanan ke kiri */
+  transition: opacity 0.7s ease, transform 0.8s ease;
+}
+
+/* CSS untuk melakukan fade-in dan menggeser elemen dari kanan ke kiri saat elemen services masuk viewport */
+#services.fade-in {
+  opacity: 1;
+  transform: translateX(0); /* Kembalikan elemen ke posisi semula */
+}
+
+@media (max-width: 833px) {
+  nav .fas {
+    display: block;
+    font-size: 25px;
+  }
+
+  nav ul {
+    background: #1b1a1a;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 140px;
+    cursor: pointer;
+  }
+}
+
+/* responsive css */
+@media (max-width: 798px) {
+  .wrapper {
+    padding: 30px 30px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .hero .wrapper {
+    padding: 300px 30px;
+  }
+  .hero .wrapper div:nth-child(1) {
+    font-size: 25px;
+  }
+  .hero .wrapper div h1 {
+    font-size: 30px;
+  }
+  .hero .wrapper div h1 span {
+    font-size: 30px;
+  }
+  #about {
+    padding: 100px 40px;
+  }
+  .about-col-1 img {
+    width: 100%;
+  }
+  .about-col-2 {
+    font-size: 14px;
+  }
+  .about-col-2 h1 {
+    font-size: 50px;
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+  #services {
+    padding: 100px 40px;
+  }
+  .services-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  #services-detail {
+    padding: 40px;
+    font-size: 13px;
+  }
+  #portfolio {
+    padding: 100px 40px;
+  }
+  #contact {
+    padding: 100px 10px;
+  }
+  #contact .row {
+    padding: 100px 40px;
+  }
+  .contact-left p {
+    margin-top: 20px;
+  }
+  .social-icons a {
+    font-size: 20px;
+  }
+  .btn {
+    padding: 14px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  #header {
+    background-size: cover;
+  }
+
+  .header-text {
+    margin-top: 100%;
+    font-size: 16px;
+  }
+
+  .header-text h1 {
+    font-size: 30px;
+  }
+
+  nav .fas {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background: #1b1a1a;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 140px;
+    cursor: pointer;
+  }
+
+  .sub-title {
+    font-size: 40px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+
+  .about-col-2 {
+    font-size: 14px;
+  }
+
+  .tab-links {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+  #contact {
+    padding: 100px 10px;
+  }
+  #contact .row {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  #header::before {
+    background-size: cover;
+  }
+}
+
+/* Media query untuk gambar latar belakang responsif di Pixel 5 */
+@media (max-width: 432px) {
+  #header::before {
+    background-size: cover;
+  }
+}
+
+/* Media query untuk gambar latar belakang responsif di Galaxy Fold */
+@media (max-width: 280px) {
+  #header::before {
+    background-size: cover;
+  }
+}
+
+/* Media query untuk gambar latar belakang responsif di iPhone 12 Pro */
+@media (max-width: 844px) {
+  #about {
+    opacity: 0;
+    transform: translateY(20px); /* Pindahkan elemen 20px ke bawah */
+    transition: opacity 0.4s ease, transform 0.3s ease;
+  }
+
+  /* CSS untuk melakukan fade-in dan menggeser elemen saat elemen about masuk viewport */
+  #about.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Kembalikan elemen ke posisi semula */
+  }
+  #header::before {
+    background-size: cover;
+  }
+}
+
+/* Media query untuk gambar latar belakang responsif di Galaxy S8 Ultra */
+@media (max-width: 412px) {
+  #header::before {
+    background-size: cover;
+  }
+}
